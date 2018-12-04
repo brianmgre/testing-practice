@@ -29,6 +29,14 @@ describe('helpers library', () => {
         expect(helpers.areSameLength(1, {})).toBe(null);
     });
 
+    it('should return null when any of the arugments are not strings', () =>{
+        expect(helpers.areSameLength()).toBe(null);
+        expect(helpers.areSameLength('a')).toBe(null);
+        expect(helpers.areSameLength('a', null)).toBe(null);
+        expect(helpers.areSameLength('a', undefined)).toBe(null);
+        expect(helpers.areSameLength(0, 'a')).toBe(null);
+    });
+
     // check for different length strings
     // it's not a string
     //passing null or underfined
